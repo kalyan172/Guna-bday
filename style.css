@@ -1,0 +1,85 @@
+body {
+    margin: 0;
+    font-family: 'Courier New', monospace;
+    background: #0a0a23; /* Darker base for starry effect */
+    overflow: hidden;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+#c-code {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: rgba(255, 255, 255, 0.15);
+    font-size: 12px;
+    line-height: 1.2;
+    pointer-events: none;
+    white-space: pre-wrap;
+    z-index: 1;
+    text-shadow: 0 0 5px rgba(0, 255, 255, 0.3);
+}
+
+.message-box {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.7);
+    z-index: 3;
+    backdrop-filter: blur(5px);
+}
+
+h1 {
+    font-size: 50px;
+    margin: 0;
+    color: #00ffcc;
+    text-shadow: 0 0 15px #00ffcc, 0 0 25px #00ffcc;
+    animation: glow 1.5s ease-in-out infinite alternate;
+}
+
+.quote {
+    font-size: 20px;
+    margin: 20px 0;
+    font-style: italic;
+    color: #e0e0e0;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+
+button {
+    padding: 12px 24px;
+    font-size: 18px;
+    cursor: pointer;
+    background: linear-gradient(45deg, #ff007a, #ffcc00);
+    border: none;
+    color: #fff;
+    border-radius: 8px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+button:hover {
+    transform: scale(1.15);
+    box-shadow: 0 0 20px rgba(255, 0, 122, 0.7);
+}
+
+canvas#confetti, canvas#stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
+@keyframes glow {
+    from { text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc; }
+    to { text-shadow: 0 0 20px #00ffcc, 0 0 30px #00ffcc, 0 0 40px #00ffcc; }
+}
